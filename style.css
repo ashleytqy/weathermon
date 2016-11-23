@@ -3,11 +3,11 @@ body{
   font-family: 'Cousine', monospace;
   color: white;
   line-height: 1.3em;
-  transition: 1s ease-in-out;
   background-image: url("assets/start.jpeg");
   background-size: "1280px auto";
   background-attachment: fixed;
-
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
 }
 
 .container {
