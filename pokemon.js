@@ -15,19 +15,24 @@ window.onload = function() {
 };
 
 
+
 //getting weather data from location
 var getWeather = function(lat, long) {
   var api = "3524867903ab320b9b11e7fd2886e1c2";
   var locationUrl = "https://api.darksky.net/forecast/" + api + "/" + lat + "," + long;
-  $.getJSON(locationUrl, function(data) {
-    var current = data.minutely.summary;
-    updateTemp(data.currently.temperature);
-    var icon = data.minutely.icon;
-    var text = "It's going to be " + current.toLowerCase();
-    $("#text").html(text);
-    var pokemon = whichType(icon);
-    setBackground(pokemon);
-    pickOne(pokemon.index);
+  $.ajax({
+    url: locationUrl,
+    dataType: "jsonp",
+    success: function (data) {
+        var current = data.minutely.summary;
+        updateTemp(data.currently.temperature);
+        var icon = data.minutely.icon;
+        var text = "It's going to be " + current.toLowerCase();
+        $("#text").html(text);
+        var pokemon = whichType(icon);
+        setBackground(pokemon);
+        pickOne(pokemon.index);
+    }
   });
 }
 
@@ -51,7 +56,7 @@ var whichType = function(weather) {
 }
 
 var setBackground = function(type) {
-  var int = getRandomInt(0, 3);
+  var int = getRandomInt(0, 2);
   if (type.self == "wind") {
     int = 0;
   }
