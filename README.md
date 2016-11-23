@@ -8,5 +8,6 @@ A weather web application that tells you the current weather and suggests a suit
 • Learnt how to write asynchronous callback functions, instead of using the delay function
 
 # to-do ☕️
-• More images!
+• More images!<br>
+• More fluid transitions<br>
 • Loading spinner...
