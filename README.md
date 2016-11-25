@@ -1,7 +1,7 @@
 # weathermon ☀️
 A weather web application that tells you the current weather and suggests a suitable Pokémon to bring out 💗
 
-![](https://media.giphy.com/media/l0MYEcEYR0537y6Yw/source.gif)
+![](https://github.com/ashleytqy/weathermon/blob/master/eg.gif)
 
 # tech & tools 🔧
 • Javascript<br>
