@@ -1,6 +1,8 @@
 # weathermon ☀️
 A weather web application that tells you the current weather and suggests a suitable Pokémon to bring out 💗
 
+![](http://gph.is/2fzuHLp)
+
 # tech & tools 🔧
 • Javascript<br>
 
