@@ -26,7 +26,7 @@ var getWeather = function(lat, long) {
         var current =  data.minutely.summary;
         updateTemp(data.currently.temperature);
         var icon = data.minutely.icon;
-        var text = "Currently: " + current.toLowerCase();
+        var text = "Currently, it's " + current.toLowerCase();
         $("#text").html(text);
         var pokemon = whichType(icon);
         setBackground(pokemon);
