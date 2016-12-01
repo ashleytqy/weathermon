@@ -74,7 +74,7 @@ var setBackground = function(type) {
 
 //picking a ranodm Pokémon of a particular type
 var pickOne = function(type) {
-  var url = "https://crossorigin.me/http://pokeapi.co/api/v2/type/" + type;
+  var url = "https://crossorigin.me/https://pokeapi.co/api/v2/type/" + type;
   $.getJSON(url, function(data) {
     var length = Math.min(data.pokemon.length, 600);
     var index = Math.floor(Math.random() * length);
