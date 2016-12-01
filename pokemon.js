@@ -1,4 +1,3 @@
-
 //getting the user's location
 window.onload = function() {
   var geoSuccess = function(position) {
@@ -19,15 +18,15 @@ window.onload = function() {
 //getting weather data from location
 var getWeather = function(lat, long) {
   var api = "3524867903ab320b9b11e7fd2886e1c2";
-  var locationUrl = "https://api.darksky.net/forecast/" + api + "/" + lat + "," + long;
+  var locationUrl = "https://crossorigin.me/https://api.darksky.net/forecast/" + api + "/" + lat + "," + long;
   $.ajax({
     url: locationUrl,
     dataType: "jsonp",
     success: function (data) {
-        var current = data.minutely.summary;
+        var current =  data.minutely.summary;
         updateTemp(data.currently.temperature);
         var icon = data.minutely.icon;
-        var text = "It's going to be " + current.toLowerCase();
+        var text = "Currently: " + current.toLowerCase();
         $("#text").html(text);
         var pokemon = whichType(icon);
         setBackground(pokemon);
@@ -62,7 +61,7 @@ var setBackground = function(type) {
   }
 
   var src = type.self + int;
-  if (src == "snow1" || src == "snow2" || src == "cloud0"){
+  if (src == "snow0" || src == "snow1" || src == "snow2" || src == "cloud0"){
     $('body').css('color', '#333');
     $('#text').css('color', '#333');
     $('#info').css('color', '#333');
@@ -75,7 +74,7 @@ var setBackground = function(type) {
 
 //picking a ranodm Pokémon of a particular type
 var pickOne = function(type) {
-  var url = "https://pokeapi.co/api/v2/type/" + type;
+  var url = "https://crossorigin.me/http://pokeapi.co/api/v2/type/" + type;
   $.getJSON(url, function(data) {
     var length = Math.min(data.pokemon.length, 600);
     var index = Math.floor(Math.random() * length);
@@ -98,7 +97,7 @@ var pickOne = function(type) {
       }
 
       if (sprite == null) {
-        alert("Sorry, no images!")
+        alert("Sorry, couldn't find an image!")
       }
 
       //redo this if both no!
