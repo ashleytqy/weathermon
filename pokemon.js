@@ -25,7 +25,6 @@ var getWeather = function(lat, long) {
     url: locationUrl,
     dataType: "jsonp",
     success: function (data) {
-          console.log(data);
         var current =  data.minutely.summary;
         updateTemp(data.currently.temperature);
         var icon = data.minutely.icon;
