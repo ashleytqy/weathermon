@@ -1,5 +1,5 @@
 # weathermon ☀️
-A weather web application that tells you the current weather and suggests a suitable Pokémon to bring out 💗
+A weather web application that tells you the current weather and suggests a suitable Pokémon to bring outside 💗
 
 ![](https://github.com/ashleytqy/weathermon/blob/master/eg.gif)
 
