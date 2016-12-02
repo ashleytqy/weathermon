@@ -1,8 +1,10 @@
 //getting the user's location
 window.onload = function() {
+  var startPos;
   var geoSuccess = function(position) {
-    var lat = position.coords.latitude;
-    var long = position.coords.longitude;
+    startPos = position;
+    var lat = startPos.coords.latitude;
+    var long = startPos.coords.longitude;
     getWeather(lat, long);
   };
 
@@ -17,12 +19,13 @@ window.onload = function() {
 
 //getting weather data from location
 var getWeather = function(lat, long) {
-  var api = "3524867903ab320b9b11e7fd2886e1c2";
-  var locationUrl = "https://crossorigin.me/https://api.darksky.net/forecast/" + api + "/" + lat + "," + long;
+  var api = "fe7d570cabe36ab27a2b1292671a6a02";
+  var locationUrl = "https://api.darksky.net/forecast/" + api + "/" + lat + "," + long;
   $.ajax({
     url: locationUrl,
     dataType: "jsonp",
     success: function (data) {
+          console.log(data);
         var current =  data.minutely.summary;
         updateTemp(data.currently.temperature);
         var icon = data.minutely.icon;
